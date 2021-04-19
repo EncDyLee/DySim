@@ -1,0 +1,26 @@
+//CMD QUEUE
+WORKLOAD_CQ_CAPACITY = 32 
+
+// Common workload
+WORKLOAD_TYPE = 1						// REAL 0, SYN 1
+MAX_WORKLOAD_VOLUME = 100				// GB; 양의 정수 <0> 기능끔(무한)
+USER_ADDR_RATE = 90						// %
+PRE_CONDITION_RATE = 0						// 
+
+//TRACE BENCHMARK
+TRACE_FILE_PATH = D:\MSR_EX\			// workload 위치(파일명 X)
+
+TIME_DELAY_RATE = 1000				// <1000> 미사용, 해당 값에 /1000한 값을 모든 명령의 시간에 곱함  
+IGNORE_IDLE_TIME = 0			// <0> 유휴시간 포함, 1 유휴시간 제외
+IGNORE_CMD = 1 					// <0> 무시없음, 1 Read 무시, 2 Write 무시
+INFINITE_PLAY = 1					// <0> 끔, 1 무한반복
+
+// MICRO BENCHMARK (Synthetic)
+ADDR_SEQUENCE = 0					// <0> Sequential, 1 Random, 2 Gaussian
+GAUSSIAN_STD_DEV = 78				// 해당 값에서 1000을 나눔
+
+WRITE_RATIO = 100					// %; 0 이상의 정수
+READ_RATIO = 0						// %; 0 이상의 정수
+
+FIXED_CMD_SIZE = 16					//under MAX_SINGLE_REQ_SIZE
+TIME_INTERVAL = 10

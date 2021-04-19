@@ -1,0 +1,11 @@
+//Host FTL
+
+BLOCK_MANAGEMENT = 1
+WL_THRESHOLD = 4	
+GC_TRIGGER_FREE_CHUNK_RATIO = 2			// %; <2>, 양의 정수
+LIMIT_BAD_CHUNK_RATIO = 0				// %; <2>, 양의 정수
+
+
+//OCSSD firmware
+CHUNK_MAPPING_MODE = 0					// 0 static, 1 replace, 2 auto, 3 dynamic
+PLANE_PER_CHUNK = 2						// 1, 2, 4, 8 ...

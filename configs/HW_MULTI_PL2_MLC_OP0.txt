@@ -1,0 +1,42 @@
+//Meomory IF model
+DATA_BUF_SIZE = 32768		// Min. (KB) = MAX_SINGLE_REQ_SIZE * OUT_STAND_CQ_CAP 
+OUT_STAND_CQ_CAP = 8		// 1, 2, 4, ... ,32 OutStanding CQ size
+MAX_SINGLE_REQ_SIZE = 512	// KB; 4, 8, 16, ..., 2048
+
+//BUS array model
+NVME_BANDWIDTH = 985				//MB/s;
+NVME_LANE_CNT = 2					//
+WAY_BANDWIDTH = 400					//MB/s;
+
+// NAND flash memory array model	
+CHANNEL_CNT = 1
+WAY_PER_CHANNEL = 8							// 1, 2, 4, 8...
+PLANE_PER_WAY = 2
+BLOCK_PER_PLANE = 1024
+PAGE_PER_BLOCK = 64
+PAGE_SIZE = 4							// KB; ..., 4, 8, <16>, ...(SECTOR_SIZE 이상의 값)
+BIT_PER_CEL = 2							// SLC, MLC, TLC
+
+OVER_PROVISION_BLOCK_RATIO = 0			// %; <2>, 양의 정수
+
+// NAND flash memory performance model
+READ_TIME_PAGE = 50						// us; <50>, 양의 정수
+PROGRAM_TIME_SLC_PAGE = 250					// us; SLC 250, MLC 550, TLC 650
+PROGRAM_TIME_MLC_PAGE = 550					// us; SLC 250, MLC 550, TLC 650
+PROGRAM_TIME_TLC_PAGE = 650					// us; SLC 250, MLC 550, TLC 650
+
+ERASE_TIME_BLOCK = 15000					// us; <5000>, 양의 정수
+
+
+//NAND Error model MLC
+A_MIN = 14104
+A_MAX = 71179
+B_MIN = 47546
+B_MAX = 50765
+
+A_ERROR_MIN = 10014
+A_ERROR_MAX = 55646
+B_ERROR_MIN = 77868
+B_ERROR_MAX = 86296
+
+ECC_BIT_MAX = 100
